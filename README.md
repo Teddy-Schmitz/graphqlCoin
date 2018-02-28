@@ -4,7 +4,7 @@ No its not another altcoin, its a graphql server to talk to a bitcoin compatible
 
 This is **alpha** quality software, expect bugs and the api to change. MRs are very appreciated
 
-##Requirements
+## Requirements
 
 A coin daemon running with txindex turned on if you want to be able to query for random transactions.  You can set `-txindex=1` or put `txindex=1` in the conf file before starting the daemon for the first time.
 
