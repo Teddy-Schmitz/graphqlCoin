@@ -1,0 +1,74 @@
+schema {
+    query: Query
+}
+
+type Query {
+    block(hash: String, height: UInt64): Block!
+    transaction(id: String!): Transaction!
+    estimatefee(blocks: Int = 2): FeeEstimate!
+    difficulty: Float!
+    mempool: [MemPoolTrx]
+}
+
+scalar Time
+scalar UInt64
+scalar Int64
+
+type Block {
+    hash: String!
+    strippedsize: UInt64!
+    size: UInt64!
+    height: UInt64!
+    confirmations: UInt64!
+    weight: UInt64!
+    time: Time!
+    bits: String!
+    version: UInt64!
+    versionhex: String!
+    merkleroot: String!
+    mediantime: Time!
+    nonce: Int64!
+    difficulty: Float!
+    chainwork: String!
+    previousblockhash: String!
+    nextblockhash: String!
+    trxIDs: [String]
+
+    transactions: [Transaction]
+}
+
+type Transaction {
+    id: String!
+    hash: String!
+    version: UInt64!
+    size: UInt64!
+    vsize: UInt64!
+    locktime: UInt64!
+    blockhash: String!
+    time: Time!
+    confirmations: UInt64!
+    blocktime: Time!
+
+    block: Block!
+}
+
+type FeeEstimate {
+    feerate: Float!
+    blocks: Int!
+}
+
+type MemPoolTrx {
+    id: String!
+    size: UInt64!
+    fee: Float!
+    modifiedFee: Float!
+    time: Time!
+    height: UInt64!
+    descendantCount: UInt64!
+    descendantSize: UInt64!
+    descendantFees: UInt64!
+    ancestorCount: UInt64!
+    ancestorSize: UInt64!
+    ancestorFees: UInt64!
+    depends: [String]
+}

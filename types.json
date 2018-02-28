@@ -1,0 +1,9 @@
+{
+  "Int64": "github.com/Teddy-Schmitz/graphqlCoin/graph.Int64",
+  "UInt64": "github.com/Teddy-Schmitz/graphqlCoin/graph.UInt64",
+  "Time": "github.com/vektah/gqlgen/graphql.Time",
+  "Block": "github.com/Teddy-Schmitz/graphqlCoin/rpcclient.Block",
+  "Transaction": "github.com/Teddy-Schmitz/graphqlCoin/rpcclient.Transaction",
+  "FeeEstimate": "github.com/Teddy-Schmitz/graphqlCoin/rpcclient.FeeEstimate",
+  "MemPoolTrx": "github.com/Teddy-Schmitz/graphqlCoin/rpcclient.MemPoolTrx"
+}
